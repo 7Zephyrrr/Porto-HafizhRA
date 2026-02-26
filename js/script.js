@@ -1,17 +1,17 @@
-// ===== DATA =====
+// ===== DATA PROJECTS & BLOG =====
 const PROJECTS = [
   {
     title: "Nexus Analytics Dashboard",
     description: "A high-performance real-time data visualization platform for global retail chains, processing over 1M events daily.",
     tags: ["React", "Node.js"],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAupzUvbD0kILADZ4UahcHP2E6YSbvEL_rZjvds3tWUtFOHN7o5b-vRjz3E9whA9oRyoNiU8uqzqMC6rNJAmjPkdDvehkD9Ef0Tdr0ytcI4aF8LgNQz5sZzSVcQJW4_D2vhr-yqcSSqAUolZStFLM-eJzLnhk4hej90PR8_vS5ipyy9pBwqp8_labLTliEYIhZn3Br1HaUyi6S_IcF6FS3hAL8bWBEB4AllEaA6Gu-tDtPW-pqHCB8RjvU8mI2vEsSP-0uEY1bR8erd",
+    image: "assets/images/project1.jpg",
     link: "#"
   },
   {
     title: "FinVault Mobile Banking",
     description: "Redesigning the mobile banking experience with a focus on accessibility and intuitive financial management for Gen-Z.",
     tags: ["UI/UX Design", "Figma"],
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAus4_KoPZTdBpMLnTEX9TiGpU6ayla68_KTx13g1sQQDaO5dh3clR4HWobQYOh63o7mb3fpACFZqhSHK2ulh-ldBGrjpNqvz4pDPfaYqGOatPddtnxE3etgcLcp7jDq9RDNSoenK6GfsaWxn0f2F_TWJCp_ktjGIk8d5t7UOKZNjxUZC9sDmDOlKAVBx72ByUlFNlcPtThXZkFTUO23N4BbWkSJPBu3H9KYX78GQbAfMSayfWxWaOTI7rTf6xZ0GwXTded6k6U-YDw",
+    image: "assets/images/project2.jpg",
     link: "#"
   }
 ];
@@ -40,117 +40,99 @@ const BLOG_POSTS = [
   }
 ];
 
-// ===== DOM ELEMENTS =====
-const projectsContainer = document.getElementById('projects-container');
-const blogContainer = document.getElementById('blog-container');
-const menuToggle = document.getElementById('menu-toggle');
-const menuClose = document.getElementById('menu-close');
-const mobileMenu = document.getElementById('mobile-menu');
-const navLinks = document.querySelectorAll('#nav-links a, #mobile-menu a');
-const ctaBtn = document.getElementById('cta-btn');
-const browseBlogBtn = document.getElementById('browse-blog');
-
-// ===== RENDER PROJECTS =====
+// ===== RENDER FUNCTIONS =====
 function renderProjects() {
-  projectsContainer.innerHTML = PROJECTS.map((project, idx) => `
-    <article class="project-card fade-in group flex flex-col bg-white dark:bg-card-dark rounded-xl border border-slate-200 dark:border-border-dark overflow-hidden hover:border-primary/50 transition-all duration-300" style="transition-delay: ${idx * 100}ms">
-      <div class="aspect-video overflow-hidden bg-slate-100 dark:bg-slate-800">
-        <img 
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-          alt="${project.title}" 
-          src="${project.image}"
-          referrerpolicy="no-referrer"
-          loading="lazy"
-        />
+  const container = document.getElementById('projects-container');
+  container.innerHTML = PROJECTS.map((project, idx) => `
+    <article class="project-card reveal" style="transition-delay: ${idx * 100}ms">
+      <div class="project-image">
+        <img src="${project.image}" alt="${project.title}" onerror="this.src='https://via.placeholder.com/600x400?text=Project'"/>
       </div>
-      <div class="p-8">
+      <div class="project-content">
         <div class="project-tags">
           ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
         </div>
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">${project.title}</h3>
-        <p class="text-slate-600 dark:text-slate-400 mb-6 line-clamp-2">
-          ${project.description}
-        </p>
-        <a class="inline-flex items-center gap-2 font-bold text-primary group-hover:gap-3 transition-all" href="${project.link}">
-          Case Study 
-          <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        <h3>${project.title}</h3>
+        <p>${project.description}</p>
+        <a href="${project.link}" class="project-link">
+          Case Study
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </article>
   `).join('');
 }
 
-// ===== RENDER BLOG POSTS =====
-function renderBlogPosts() {
-  blogContainer.innerHTML = BLOG_POSTS.map((post, idx) => `
-    <a class="blog-post fade-in group" href="${post.link}" style="transition-delay: ${idx * 100}ms">
-      <div class="blog-content">
+function renderBlog() {
+  const container = document.getElementById('blog-container');
+  container.innerHTML = BLOG_POSTS.map((post, idx) => `
+    <a href="${post.link}" class="blog-item reveal" style="transition-delay: ${idx * 100}ms">
+      <div>
         <div class="blog-meta">
           <span>${post.date}</span>
           <span>•</span>
           <span>${post.readTime}</span>
         </div>
-        <h3 class="blog-title">${post.title}</h3>
-        <p class="blog-excerpt">${post.excerpt}</p>
+        <h3>${post.title}</h3>
+        <p>${post.excerpt}</p>
       </div>
-      <div class="mt-6 md:mt-0">
-        <svg class="blog-arrow size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-      </div>
+      <svg class="icon blog-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
     </a>
   `).join('');
 }
 
-// ===== SCROLL ANIMATIONS =====
-function setupScrollAnimations() {
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
+// ===== ANIMATIONS =====
+function initAnimations() {
+  // Hero animations on load
+  document.querySelectorAll('.fade-in-left, .fade-in-right, .fade-in-up').forEach(el => {
+    setTimeout(() => el.classList.add('animate-visible'), 100);
+  });
 
+  // Scroll reveal animation
+  const revealElements = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-  document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-scale').forEach(el => {
-    observer.observe(el);
-  });
+  revealElements.forEach(el => observer.observe(el));
 }
 
-// ===== MOBILE MENU =====
-function setupMobileMenu() {
-  function toggleMenu() {
-    mobileMenu.classList.toggle('active');
-    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-  }
-
-  menuToggle?.addEventListener('click', toggleMenu);
-  menuClose?.addEventListener('click', toggleMenu);
+// ===== MOBILE NAVIGATION =====
+function initMobileNav() {
+  const toggle = document.querySelector('.mobile-toggle');
+  const navLinks = document.querySelector('.nav-links');
   
-  // Close menu when clicking a link
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('active');
-      document.body.style.overflow = '';
-    });
+  if (!toggle || !navLinks) return;
+  
+  toggle.addEventListener('click', () => {
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', !isExpanded);
+    navLinks.classList.toggle('active');
   });
 
-  // Close menu when clicking outside
-  mobileMenu?.addEventListener('click', (e) => {
-    if (e.target === mobileMenu) toggleMenu();
+  // Close menu when clicking a link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
   });
 }
 
 // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
-function setupSmoothScroll() {
+function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const target = document.querySelector(href);
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
@@ -158,60 +140,21 @@ function setupSmoothScroll() {
   });
 }
 
-// ===== CTA BUTTONS =====
-function setupCTAButtons() {
-  ctaBtn?.addEventListener('click', () => {
-    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-  });
-  
-  browseBlogBtn?.addEventListener('click', () => {
-    // Implement browse all logic here
-    alert('Blog archive coming soon!');
-  });
-}
-
-// ===== NAVIGATION ACTIVE STATE =====
-function setupActiveNav() {
-  const sections = document.querySelectorAll('section[id]');
-  
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 100;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-    
-    document.querySelectorAll('#nav-links a').forEach(link => {
-      link.classList.remove('text-primary');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('text-primary');
-      }
-    });
-  });
-}
-
-// ===== INITIALIZATION =====
-function init() {
+// ===== INIT =====
+document.addEventListener('DOMContentLoaded', () => {
   renderProjects();
-  renderBlogPosts();
-  setupScrollAnimations();
-  setupMobileMenu();
-  setupSmoothScroll();
-  setupCTAButtons();
-  setupActiveNav();
+  renderBlog();
+  initAnimations();
+  initMobileNav();
+  initSmoothScroll();
   
-  // Trigger initial animation for hero section
-  setTimeout(() => {
-    document.querySelector('.hero-content')?.classList.add('visible');
-    document.querySelector('.hero-image')?.classList.add('visible');
-  }, 100);
-}
-
-// ===== RUN ON DOM READY =====
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
-} else {
-  init();
-}
+  // Button interactions
+  document.querySelectorAll('.btn').forEach(btn => {
+    btn.addEventListener('mouseenter', function() {
+      this.style.transform = 'scale(1.05)';
+    });
+    btn.addEventListener('mouseleave', function() {
+      this.style.transform = 'scale(1)';
+    });
+  });
+});
