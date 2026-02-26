@@ -3,181 +3,138 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hafizh Rafif Annaafi - Portfolio</title>
-  <meta name="description" content="Portfolio personal Hafizh Rafif Annaafi - Developer & Designer"/>
+  <title>Hafizh Rafif Annaafi - Portofolio</title>
+  <meta name="description" content="Portofolio personal Hafizh Rafif Annaafi - Developer & Designer"/>
   
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
   
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body class="dark">
-  
-  <!-- Navigation -->
-  <nav class="glass-nav fixed top-0 w-full z-50 border-b border-slate-200 dark:border-border-dark bg-white/80 dark:bg-background-dark/80">
-    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-2 group cursor-pointer" id="logo">
-        <div class="size-8 bg-primary rounded flex items-center justify-center text-background-dark">
-          <svg class="size-5 font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3-3 3 3m0 6l-3 3-3-3"></path></svg>
+
+  <!-- Navigasi -->
+  <nav class="glass-nav">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
         </div>
-        <span class="text-lg font-bold tracking-tight text-slate-900 dark:text-white">Hafizh Rafif</span>
+        <span>Hafizh Rafif</span>
+      </a>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
       </div>
-      
-      <button class="md:hidden text-slate-900 dark:text-white" id="menu-toggle" aria-label="Toggle menu">
-        <svg class="size-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      <button class="btn btn-primary btn-sm">Let's Talk</button>
+      <button class="mobile-toggle" aria-label="Toggle menu">
+        <span class="hamburger"></span>
       </button>
-      
-      <div class="hidden md:flex items-center gap-10" id="nav-links">
-        <a class="text-sm font-medium hover:text-primary transition-colors" href="#home">Home</a>
-        <a class="text-sm font-medium hover:text-primary transition-colors" href="#projects">Projects</a>
-        <a class="text-sm font-medium hover:text-primary transition-colors" href="#blog">Blog</a>
-        <a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
-      </div>
-      
-      <div class="flex items-center gap-4">
-        <button class="bg-primary hover:bg-primary/90 text-background-dark px-5 py-2 rounded-lg text-sm font-bold transition-all transform hover:scale-105 cursor-pointer" id="cta-btn">
-          Let's Talk
-        </button>
-      </div>
     </div>
   </nav>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu fixed inset-0 bg-background-dark/95 z-40 hidden flex-col items-center justify-center gap-8 md:hidden" id="mobile-menu">
-    <button class="absolute top-6 right-6 text-white" id="menu-close" aria-label="Close menu">
-      <svg class="size-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-    </button>
-    <a class="text-2xl font-bold text-white hover:text-primary transition-colors" href="#home">Home</a>
-    <a class="text-2xl font-bold text-white hover:text-primary transition-colors" href="#projects">Projects</a>
-    <a class="text-2xl font-bold text-white hover:text-primary transition-colors" href="#blog">Blog</a>
-    <a class="text-2xl font-bold text-white hover:text-primary transition-colors" href="#contact">Contact</a>
-  </div>
-
-  <main class="max-w-6xl mx-auto px-6 pt-32">
+  <!-- Main Content -->
+  <main class="container">
     
     <!-- Hero Section -->
-    <section id="home" class="grid md:grid-cols-2 gap-12 items-center mb-32">
-      <div class="flex flex-col gap-8 hero-content">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest w-fit">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-          </span>
+    <section class="hero">
+      <div class="hero-content fade-in-left">
+        <div class="badge">
+          <span class="pulse-dot"></span>
           Available for new projects
         </div>
-        <h1 class="text-5xl md:text-6xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white">
-          Hi, I'm Hafizh Rafif Annaafi. <span class="text-primary">Crafting digital experiences</span> and documenting the journey.
-        </h1>
-        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
-          A multi-disciplinary developer and designer focused on building functional, beautiful, and human-centered web solutions.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a class="bg-primary hover:bg-primary/90 text-background-dark px-8 py-4 rounded-lg font-bold transition-all flex items-center gap-2" href="#projects">
+        <h1>Hi, I'm Hafizh Rafif Annaafi. <span class="text-primary">Crafting digital experiences</span> and documenting the journey.</h1>
+        <p>A multi-disciplinary developer and designer focused on building functional, beautiful, and human-centered web solutions.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
             View Projects
-            <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <a class="bg-transparent border border-slate-300 dark:border-border-dark hover:border-primary/50 text-slate-900 dark:text-white px-8 py-4 rounded-lg font-bold transition-all" href="#blog">
-            Read Blog
-          </a>
+          <a href="#blog" class="btn btn-outline">Read Blog</a>
         </div>
       </div>
-      
-      <div class="relative group hero-image">
-        <div class="absolute -inset-1 bg-gradient-to-r from-primary to-emerald-400 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-        <div class="relative aspect-square w-full max-w-md mx-auto overflow-hidden rounded-2xl border-4 border-white dark:border-border-dark shadow-2xl">
-          <img 
-            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" 
-            alt="Professional portrait of Hafizh Rafif" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuyG3fOBQC4rD7Ikm26YcFcSELoumugoOcKYzHbu5TXzZZ90f1qc5khHjZ8fM13PsSLoj1xcbm0nKZbab7s2nQWU_MaZjUTH3PQGxhSu8vXt44Lc_ZqL8-TewwX_kylPjJYnrHv2PeRbqtwvKyGtDJQWg9Tf-BLaeA8dgxNn7Scy92F6NGpc2LZa3nbO0uTOMsUL_3fxg50CQfXZzgEPlul9-UVI5nLbo8A2DgTRx7yGeHiTnKEKwWig5TKcCOBQ68U0K5_TL5xkK_" 
-            referrerpolicy="no-referrer"
-          />
+      <div class="hero-image fade-in-right">
+        <div class="image-glow"></div>
+        <div class="image-wrapper">
+          <img src="assets/images/profile.jpg" alt="Professional portrait of Hafizh Rafif" class="profile-img"/>
         </div>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="my-32">
-      <div class="flex justify-between items-end mb-12">
+    <section id="projects" class="section">
+      <div class="section-header">
         <div>
-          <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Featured Projects</h2>
-          <p class="text-slate-600 dark:text-slate-400">A selection of my recent works in development and design.</p>
+          <h2>Featured Projects</h2>
+          <p>A selection of my recent works in development and design.</p>
         </div>
-        <a class="text-primary font-semibold flex items-center gap-2 hover:underline" href="#">
-          View Archive 
-          <svg class="size-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        <a href="#" class="link-arrow">View Archive 
+          <svg class="icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
         </a>
       </div>
-      
-      <div class="grid md:grid-cols-2 gap-8" id="projects-container">
+      <div class="projects-grid" id="projects-container">
         <!-- Projects will be injected by JavaScript -->
       </div>
     </section>
 
     <!-- Blog Section -->
-    <section id="blog" class="my-32">
-      <div class="mb-12">
-        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Latest Thoughts</h2>
-        <p class="text-slate-600 dark:text-slate-400">Insights into development, design, and digital life.</p>
+    <section id="blog" class="section">
+      <div class="section-header">
+        <h2>Latest Thoughts</h2>
+        <p>Insights into development, design, and digital life.</p>
       </div>
-      
-      <div class="flex flex-col border-t border-slate-200 dark:border-border-dark" id="blog-container">
+      <div class="blog-list" id="blog-container">
         <!-- Blog posts will be injected by JavaScript -->
       </div>
-      
-      <div class="mt-12 text-center">
-        <button class="bg-slate-900 dark:bg-white text-white dark:text-background-dark px-10 py-4 rounded-lg font-bold hover:bg-primary dark:hover:bg-primary transition-all cursor-pointer" id="browse-blog">
-          Browse All Articles
-        </button>
+      <div class="text-center mt-12">
+        <button class="btn btn-dark">Browse All Articles</button>
       </div>
     </section>
 
-    <!-- Contact CTA Section -->
-    <section id="contact" class="my-32">
-      <div class="bg-primary/10 dark:bg-card-dark rounded-2xl p-8 md:p-16 border border-primary/20 dark:border-border-dark text-center relative overflow-hidden contact-cta">
-        <div class="absolute top-0 right-0 p-8 opacity-5">
-          <svg class="size-32" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="cta-box fade-in-up">
+        <div class="cta-icon">
+          <svg class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
         </div>
-        <h2 class="text-4xl font-black text-slate-900 dark:text-white mb-6">Let's build something great.</h2>
-        <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 text-lg">
-          Have a project in mind or just want to say hi? My inbox is always open for interesting collaborations and coffee chats.
-        </p>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
-          <a class="bg-primary hover:bg-primary/90 text-background-dark px-10 py-4 rounded-lg font-bold transition-all w-full md:w-auto" href="mailto:hello@hafizhrf.com">
-            Get in Touch
-          </a>
-          <div class="flex gap-4">
-            <a class="size-12 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-border-dark flex items-center justify-center hover:text-primary transition-colors" href="#" aria-label="Portfolio Link">
-              <svg class="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+        <h2>Let's build something great.</h2>
+        <p>Have a project in mind or just want to say hi? My inbox is always open for interesting collaborations and coffee chats.</p>
+        <div class="cta-actions">
+          <a href="mailto:hello@hafizhrf.com" class="btn btn-primary">Get in Touch</a>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Website">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
             </a>
-            <a class="size-12 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-border-dark flex items-center justify-center hover:text-primary transition-colors" href="mailto:hello@hafizhrf.com" aria-label="Email">
-              <svg class="size-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <a href="#" class="social-btn" aria-label="Email">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
             </a>
           </div>
         </div>
       </div>
     </section>
-    
+
   </main>
 
   <!-- Footer -->
-  <footer class="border-t border-slate-200 dark:border-border-dark py-12 bg-white dark:bg-background-dark">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-      <div class="flex items-center gap-2">
-        <div class="size-6 bg-primary/20 rounded flex items-center justify-center text-primary">
-          <svg class="size-3 font-bold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3-3 3 3m0 6l-3 3-3-3"></path></svg>
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-logo">
+        <div class="logo-icon small">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
         </div>
-        <span class="text-sm font-bold text-slate-900 dark:text-white">Hafizh Rafif</span>
+        <span>Hafizh Rafif</span>
       </div>
-      <p class="text-xs text-slate-500 dark:text-slate-500">
-        © 2024 Hafizh Rafif Annaafi. Built with precision and passion.
-      </p>
-      <div class="flex items-center gap-6 text-slate-500 dark:text-slate-400">
-        <a class="hover:text-primary transition-colors text-xs font-medium" href="#">LinkedIn</a>
-        <a class="hover:text-primary transition-colors text-xs font-medium" href="#">GitHub</a>
-        <a class="hover:text-primary transition-colors text-xs font-medium" href="#">Twitter</a>
-        <a class="hover:text-primary transition-colors text-xs font-medium" href="#">Instagram</a>
+      <p class="copyright">© 2024 Hafizh Rafif Annaafi. Built with precision and passion.</p>
+      <div class="footer-links">
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
       </div>
     </div>
   </footer>
